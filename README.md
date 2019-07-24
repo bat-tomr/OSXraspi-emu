@@ -1,6 +1,7 @@
 # OSXraspi-emu
 
-How to setup a raspi VM using QEMU on OSX. Extended from [tinjaw](https://gist.github.com/tinjaw)'s [Gist](https://gist.github.com/tinjaw/5bc5527ff379e8dd299a0b67e2bc9b62). I decided to create a Repo instead of a Gist because I am expecting to add more stuff including host/guest related scripts or other source code over time.
+How to setup a raspi VM using QEMU on OSX and use ssh and nfs. 
+Extended from [tinjaw](https://gist.github.com/tinjaw)'s [Gist](https://gist.github.com/tinjaw/5bc5527ff379e8dd299a0b67e2bc9b62). I decided to create a Repo instead of a Gist because I am expecting to add more stuff including host/guest related scripts or other source code over time.
 
 ## Prerequisite
 Have home brew installed (see https://brew.sh/)
@@ -22,7 +23,16 @@ cd qemu-rpi
 ./runme
 ```
 
-After the start of the Raspi VM, you can log into your Raspi VM either from the OSX console you started your VM from or from the QEMU application window.
+It everything worked out, you should see a QEMU application window with Raspbian booted up as well as a raspberry login prompt in the OSX console window in which you started ``runme``:
+
+Raspi VM in QEMU Window:
+![alt text](https://github.com/bat-tomr/OSXraspi-emu/blob/master/screenshots/qemuWindow.png "Raspi VM in OSX console")
+
+Raspi VM in OSX console: 
+![alt text](https://github.com/bat-tomr/OSXraspi-emu/blob/master/screenshots/OSXTerminal.png "Raspi VM in OSX console")
+
+
+After the start of the Raspi VM, you can log into your Raspi by logging into either windows.
 
 ## Access Raspi VM via ssh
 ### Enable ssh access on Raspi VM:
