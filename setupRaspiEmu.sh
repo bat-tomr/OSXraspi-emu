@@ -23,6 +23,6 @@ wget -nc https://github.com/dhruvvyas90/qemu-rpi-kernel/raw/master/versatile-pb.
 	    -O ${PTB_FILE}
 
 wget -nc $IMAGE
-unzip -nv $IMAGE_FILE
+unzip -n $IMAGE_FILE
 
 cp ../runme .
