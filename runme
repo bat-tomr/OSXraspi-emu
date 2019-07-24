@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export QEMU=$(which qemu-system-arm)
+export RPI_KERNEL=./kernel-qemu-4.14.79-stretch
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/usr/local/Cellar/libffi/3.2.1/lib
+export RPI_FS=./2018-11-13-raspbian-stretch-lite.img
+
+$QEMU -kernel $RPI_KERNEL \
+-cpu arm1176 -m 256 -M versatilepb \
+-dtb ./versatile-pb.dtb -no-reboot \
+-serial stdio \
+-append "root=/dev/sda2 panic=1 rootfstype=ext4 rw" \
+-drive "file=${RPI_FS},index=0,media=disk,format=raw" \
+-net user,hostfwd=tcp::5022-:22 -net nic 
